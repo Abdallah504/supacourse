@@ -45,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ElevatedButton(onPressed: (){
                       provider.signInWithSupabase(email: emailController.text, password: passController.text).then((v){
                         provider.getUserData();
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileScreen()));
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>ProfileScreen()));
                       });
                     }, child: Text('Login',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)),
 

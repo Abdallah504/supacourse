@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:supabasecourse/logic/main-app-provider.dart';
+import 'package:supabasecourse/logic/storage-provider.dart';
 import 'package:supabasecourse/screens/auth-gate.dart';
 
 void main() async {
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(providers:[
-      ChangeNotifierProvider(create: (context)=>MainAppProvider())
+      ChangeNotifierProvider(create: (context)=>MainAppProvider()),
+      ChangeNotifierProvider(create: (context)=>StorageProvider())
     ] ,
     child: MaterialApp(
       title: 'Flutter Demo',

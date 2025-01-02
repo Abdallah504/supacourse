@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:supabasecourse/screens/login-screen.dart';
+import 'package:supabasecourse/screens/note-screen.dart';
 import 'package:supabasecourse/screens/profile-screen.dart';
 
 class AuthGate extends StatelessWidget {
@@ -22,7 +23,7 @@ class AuthGate extends StatelessWidget {
           final session = snapshot.hasData ? snapshot.data!.session : null;
 
           if(session !=null){
-            return ProfileScreen();
+            return NoteScreen();
           }else{
             return LoginScreen();
           }
